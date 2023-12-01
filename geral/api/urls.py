@@ -1,8 +1,9 @@
 from rest_framework import routers
-from .viewsets import ProdutosViewSets, UsuariosViewSets
+from .viewsets import PublicacaoViewSets, UsuariosViewSets , DoacoesViewSets
 
-produto_routers = routers.DefaultRouter()
-produto_routers.register(r'/produtos',ProdutosViewSets)
-produto_routers.register(r'/usuarios',UsuariosViewSets)
-urlpatterns = produto_routers.urls
+dados_routers = routers.DefaultRouter()
+dados_routers.register(r'/publicacoes',PublicacaoViewSets)
+dados_routers.register(r'/doacoes',DoacoesViewSets)
+dados_routers.register(r'/usuarios',UsuariosViewSets)
+urlpatterns = dados_routers.urls
  

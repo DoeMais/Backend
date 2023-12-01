@@ -1,12 +1,12 @@
 from rest_framework import viewsets
 from  geral.api import serializers
 from geral import models
-from ..models import Publicacao , Usuario
+from ..models import Publicacao , Doacoes , Usuario
 from django.views.decorators.http import require_GET
 
 
-class ProdutosViewSets(viewsets.ModelViewSet):
-    serializer_class =  serializers.ProdutosSerializers
+class PublicacaoViewSets(viewsets.ModelViewSet):
+    serializer_class =  serializers.PublicacaoSerializers
     queryset = models.Publicacao.objects.all()
 
 def get_queryset(self): 
@@ -14,6 +14,17 @@ def get_queryset(self):
     nome = self.request.query_params.get('nome')
     if nome is not None: 
         query = query.filter(nome_icontains = nome)
+    return query
+
+class DoacoesViewSets(viewsets.ModelViewSet):
+    serializer_class =  serializers.DoacoesSerializers
+    queryset = models.Doacoes.objects.all()
+
+def get_queryset(self): 
+    query = DoacoesViewSets.objects.all()
+    titulo_geral = self.request.query_params.get('titulo_geral')
+    if titulo_geral is not None: 
+        query = query.filter(nome_icontains = titulo_geral)
     return query
 
 
