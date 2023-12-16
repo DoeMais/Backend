@@ -8,7 +8,6 @@ from django.views.decorators.http import require_GET
 
 class PublicacaoViewSets(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
-
     serializer_class =  serializers.PublicacaoSerializers
     queryset = models.Publicacao.objects.all()
 
@@ -20,8 +19,12 @@ def get_queryset(self):
     return query
 
 class DoacoesViewSets(viewsets.ModelViewSet):
+<<<<<<< Updated upstream
     permission_classes = (IsAuthenticated)
 
+=======
+    permission_classes = (IsAuthenticated,)
+>>>>>>> Stashed changes
     serializer_class =  serializers.DoacoesSerializers
     queryset = models.Doacoes.objects.all()
 

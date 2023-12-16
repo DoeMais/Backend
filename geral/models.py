@@ -38,8 +38,6 @@ class Usuario(models.Model):
       senhaUser = models.CharField(max_length=255)
       image_User = models.ImageField(upload_to= upload_media3, blank = True, null = True)
 
-   
-
       USERNAME_FIELD = 'emailUser'
       REQUIRED_FIELDS = ['nomeUser','senhaUser', 'idadeUser']
 
