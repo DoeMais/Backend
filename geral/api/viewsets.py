@@ -19,12 +19,7 @@ def get_queryset(self):
     return query
 
 class DoacoesViewSets(viewsets.ModelViewSet):
-<<<<<<< Updated upstream
-    permission_classes = (IsAuthenticated)
-
-=======
     permission_classes = (IsAuthenticated,)
->>>>>>> Stashed changes
     serializer_class =  serializers.DoacoesSerializers
     queryset = models.Doacoes.objects.all()
 
@@ -37,6 +32,7 @@ def get_queryset(self):
 
 
 class UsuariosViewSets(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
     serializer_class =  serializers.UsuariosSerializers
     queryset = models.Usuario.objects.all()
 
