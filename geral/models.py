@@ -15,7 +15,6 @@ class Publicacao(models.Model):
    nome = models.CharField(max_length=255)
    endereco =  models.CharField(max_length=254)
    texto_explicativo = models.TextField()
-   data = models.DateField()
    image_P = models.ImageField(upload_to= upload_media, blank = True, null = True)
 
 
@@ -27,7 +26,6 @@ class Doacoes(models.Model):
    titulo_geral = models.CharField(max_length=255)
    contato =  models.CharField(max_length=254)
    texto_explicativo = models.TextField()
-   data2 = models.DateField()
    image_D = models.ImageField(upload_to= upload_media2, blank = True, null = True)
 
    def __str__(self):
